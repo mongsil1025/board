@@ -1,7 +1,7 @@
-package com.community.board.repository;
+package com.board.repository;
 
-import com.community.board.domain.Board;
-import com.community.board.domain.User;
+import com.board.domain.Board;
+import com.board.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

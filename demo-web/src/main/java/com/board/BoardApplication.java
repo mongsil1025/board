@@ -1,10 +1,10 @@
-package com.community.board;
+package com.board;
 
-import com.community.board.domain.Board;
-import com.community.board.domain.User;
-import com.community.board.domain.enums.BoardType;
-import com.community.board.repository.BoardRepository;
-import com.community.board.repository.UserRepository;
+import com.board.domain.Board;
+import com.board.domain.User;
+import com.board.domain.enums.BoardType;
+import com.board.repository.BoardRepository;
+import com.board.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

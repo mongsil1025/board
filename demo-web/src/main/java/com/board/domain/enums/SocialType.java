@@ -1,4 +1,4 @@
-package com.community.board.domain.enums;
+package com.board.domain.enums;
 
 public enum SocialType {
     FACEBOOK("facebook"),

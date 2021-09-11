@@ -1,6 +1,6 @@
-package com.community.board.domain;
+package com.board.domain;
 
-import com.community.board.domain.enums.SocialType;
+import com.board.domain.enums.SocialType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

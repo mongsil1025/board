@@ -1,6 +1,6 @@
-package com.community.board.controller;
+package com.board.controller;
 
-import com.community.board.service.BoardService;
+import com.board.service.BoardService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;

@@ -1,4 +1,4 @@
-package com.community.board.domain.enums;
+package com.board.domain.enums;
 
 public enum BoardType {
     NOTICE("공지사항"),
