@@ -5,7 +5,13 @@
 저작권 문제 시, 연락 부탁드립니다. 
 ``` 
 
-해당 책은 커뮤니티 게시판을 구현하며 배우는 스프링부트2를 알아본다. 회사에서 스프링부트로 실무를 하고 있지만, 좀더 깊게 내용을 알고 싶어서 책을 구매했고 개인적으로 노트하기 위해 실습내용을 정리합니다 :)
+해당 책은 커뮤니티 게시판을 구현하며 배우는 스프링부트2를 알아본다. 회사에서 스프링부트로 실무를 하고 있지만, 좀더 깊게 내용을 알고 싶어서 책을 구매했고 개인적으로 노트하기 위해 실습내용을 정리합니다 :smile:
+
+## 삽질기
+
+- gradle 1.7 과 java 11 은 h2 의존성 주입시 문제가 있다
+    - [javax/xml/bind/JAXBException](https://stackoverflow.com/questions/43574426/how-to-resolve-java-lang-noclassdeffounderror-javax-xml-bind-jaxbexception)
+    - gradle 1.7의 명령어와, java9 이상일 때 위의 문제점을 해결해봐야 할듯
 
 ## 1장. 스프링 부트 입문하기
 
@@ -19,6 +25,8 @@ spring-boot-starter-*
 ```
 
 [다양한 Spring Boot Starter](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.build-systems.starters)
+
+
 [스프링의 Release Notes를 확인해서 Changes를 트래킹하자](https://github.com/spring-projects/spring-boot/wiki)
 
 ## 2장. 스프링 부트 환경설정
@@ -92,7 +100,7 @@ $ java -jar ... -D spring.profiles.active=dev
 
 `@Value`, `@ConfigurationProperties` 를 사용해서 프로퍼티값을 매핑할 수 있다.
 
-[ ] [포스팅](https://jojoldu.tistory.com/123) 참고해서 도메인 모듈로 분리해보기
+- [ ] [포스팅](https://jojoldu.tistory.com/123) 참고해서 도메인 모듈로 분리해보기
 
 ### 자동환경 설정
 
@@ -114,8 +122,7 @@ $ java -jar ... -D spring.profiles.active=dev
 - `@JsonTest` : json의 직렬화와 역직렬화를 수행하는 라이브러리인 Gson과 Jackson API의 테스트를 제공한다.
 - `@DataMongoTest`
 
-단위 테스트를 꼼꼼히 해야겠다. 그리고 @DataMongoTest 사용해보자
-{: .alert .alert-info}
+- [ ] 단위 테스트를 꼼꼼히 해야겠다. 그리고 @DataMongoTest 사용해보자
 
 ## 4장. 스프링 부트 웹
 

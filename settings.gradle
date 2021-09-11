@@ -1,4 +1,3 @@
 rootProject.name = 'board'
-include 'demo-web'
-include 'demo-domain'
+include 'demo-web', 'demo-domain'
 
