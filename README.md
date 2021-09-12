@@ -126,8 +126,67 @@ $ java -jar ... -D spring.profiles.active=dev
 
 ## 4장. 스프링 부트 웹
 
+MVC 패턴 & Thymeleaf 를 사용해서 게시판 사이트를 만들어본다
+
+### JPA 도메인 매핑
+
+``` java
+@Getter
+@NoArgsConstructor
+@Entity
+@Table
+@AllArgsConstructor
+@Builder
+public class Board {
+
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idx;
+
+    @Column
+    private String title;
+
+    @Column
+    private String subTitle;
+
+    @Column
+    private String content;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private BoardType boardType;
+
+    @Column
+    private LocalDateTime createdDate;
+
+    @Column
+    private LocalDateTime updatedDate;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private User user;
+
+}
+```
+
+- `@GeneratedValue(strategy = GenerationType.IDENTITY)` : 기본 키 자동 할당
+- `@Enumerated(EnumType.STRING)` : 실제로 자바 enum 형이지만 DB의 String 형으로 변환하여 저장
+- `@OneToOne(fetch = FetchType.LAZY)` : Board 와 User 도메인을 1:1 관계로 설정
+  - FetchType.EAGER : Board 도메인을 조회할 때 즉시 User 객체 함께 조회
+  - FetchType.LAZY : User 도메인을 실제로 사용할 때 조회
+
+### @Test 코드 선작성 , 필요 리소스 후작성
+
+책에서는 도메인 객체를 정의하고 save, find 하는 @Test 메서드를 먼저 작성 한뒤, 빨간색으로 에러가 나면 그 클래스들을 `Maske UserRepository` `Create interface UserRepository` 등을 클릭해서 class를 만들었다.
+
+TDD 개념으로 테스트를 먼저 작성하고 그에 해당하는 클래스를 후 작성하는 패턴인 것 같다
+
+`CommandLineRunner` 를 수행해서 초기 데이터를 미리 설정할 수 있다
+
+[ThymeLeaf 문법](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
+
 ## 5장. 스프링 부트 시큐리티 + OAuth2
 
 ## 6장. 스프링 부트 데이터 Rest
 
-## 7장. 스프링 부트 배치
+## 7장. 스프링 부트 배치 

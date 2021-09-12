@@ -9,7 +9,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
@@ -23,13 +22,8 @@ public class BoardApplication {
 		SpringApplication.run(BoardApplication.class, args);
 	}
 
-	@GetMapping
-	public String HelloWorld() {
-		return "Hello World!";
-	}
-
 	@Bean
-	public CommandLineRunner runner(UserRepository userRepository, BoardRepository boardRepository) {
+	public CommandLineRunner runner(UserRepository userRepository, BoardRepository boardRepository) { // 필요한 Bean 을 주입받는다 (생성자를 통해 의존성을 주입)
 		return (args) -> {
 			User user = userRepository.save(User.builder()
 					.name("sunmin")
