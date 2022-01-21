@@ -33,7 +33,7 @@ public class BoardApplication {
 
 			IntStream.rangeClosed(1, 200).forEach(index -> {
 				boardRepository.save(Board.builder()
-						.title("내 사과를 받아죠~♥♥♥♥")
+						.title("♥♥♥♥")
 						.subTitle("헤헤")
 						.content("")
 						.boardType(BoardType.FREE)
